@@ -56,19 +56,21 @@ class Player(pygame.sprite.Sprite):
 		if keys[pygame.K_SPACE] and not self.attacking:
 			self.attacking = True
 			self.attack_time = pygame.time.get_ticks()
-			print('attack1')
+			print('attack')
 
-		#attack2 input
-		if mouse[0]and not self.attacking:
+			# magic input 
+		if mouse[0] and not self.attacking:
 			self.attacking = True
 			self.attack_time = pygame.time.get_ticks()
-			print('attack2')
+			print('magic')
 
 	def get_status(self):
-		#idle status
-		if self.direction.x == 	0 and self.direction.y == 0:
+
+		# idle status
+		if self.direction.x == 0 and self.direction.y == 0:
 			if not 'idle' in self.status and not 'attack' in self.status:
 				self.status = self.status + '_idle'
+
 		if self.attacking:
 			self.direction.x = 0
 			self.direction.y = 0
@@ -80,6 +82,7 @@ class Player(pygame.sprite.Sprite):
 		else:
 			if 'attack' in self.status:
 				self.status = self.status.replace('_attack','')
+
 	def move(self,speed):
 		if self.direction.magnitude() != 0:
 			self.direction = self.direction.normalize()

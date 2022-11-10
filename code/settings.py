@@ -4,6 +4,7 @@ TILESIZE = 16
 
 WIDTH    = 800
 HEIGTH   = 600
+center = ((WIDTH/2),(HEIGTH/2))
 FPS      = 60
 
 #weapon data
